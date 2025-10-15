@@ -1,0 +1,210 @@
+{{template "base/head" .}}
+<div role="main" aria-label="{{if .IsSigned}}{{ctx.Locale.Tr "dashboard"}}{{else}}{{ctx.Locale.Tr "home"}}{{end}}" class="page-content p-0">
+	{{if .IsSigned}}
+	<section class="py-5 bg-soft border-bottom">
+		<div class="container">
+			<div class="row align-items-center g-4">
+				<div class="col-lg-8">
+					<span class="badge text-bg-primary text-uppercase mb-3">Welcome back</span>
+					<h1 class="display-5 fw-bold mb-3">Dashboard · {{.SignedUser.Name}}</h1>
+					<p class="lead mb-4">Quick links to jump straight into your day with {{AppName}}.</p>
+					<div class="d-flex flex-wrap gap-3">
+						<a class="btn btn-primary btn-lg" href="{{AppSubUrl}}/repo/create">
+							<i class="fa-solid fa-circle-plus me-2"></i>Create repository
+						</a>
+						<a class="btn btn-outline-primary btn-lg" href="{{AppSubUrl}}/explore/repos">
+							<i class="fa-solid fa-compass me-2"></i>Explore projects
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card shadow-sm border-0">
+						<div class="card-body">
+							<h2 class="h5 fw-semibold mb-4">Quick actions</h2>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/{{.SignedUser.Name}}"><i class="fa-solid fa-user me-2"></i>View profile</a></li>
+								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/{{.SignedUser.Name}}?tab=repositories"><i class="fa-solid fa-book me-2"></i>Manage repositories</a></li>
+								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/notifications"><i class="fa-solid fa-bell me-2"></i>Check notifications</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-5">
+		<div class="container">
+			<div class="row g-4">
+				<div class="col-md-4">
+					<div class="card home-stat-card h-100">
+						<div class="card-body">
+							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-timeline me-2 text-primary"></i>Stay updated</h3>
+							<p class="text-muted mb-3">Jump into your activity feed to review pull requests, issues and events.</p>
+							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/dashboard">Open dashboard</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card home-stat-card h-100">
+						<div class="card-body">
+							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-diagram-project me-2 text-primary"></i>Manage repositories</h3>
+							<p class="text-muted mb-3">Keep tabs on projects, branches and pull requests that matter most.</p>
+							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/{{.SignedUser.Name}}?tab=repositories">View repositories</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card home-stat-card h-100">
+						<div class="card-body">
+							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-gear me-2 text-primary"></i>Tune your settings</h3>
+							<p class="text-muted mb-3">Update SSH keys, notifications and integrations for your workflow.</p>
+							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/user/settings">Open settings</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{{else}}
+	<section class="home-hero">
+		<div class="container py-5">
+			<div class="row align-items-center g-5">
+				<div class="col-12 col-lg-7">
+					<span class="badge text-bg-primary text-uppercase mb-3">Self-hosted Git · {{AppName}}</span>
+					<h1 class="mb-4">Build, collaborate and deliver with confidence.</h1>
+					<p class="lead mb-5">Lightweight, powerful and totally yours. {{AppName}} gives your team a beautiful code collaboration hub backed by open source freedom.</p>
+					<div class="d-flex flex-wrap gap-3">
+						<a class="btn btn-primary btn-lg" href="{{AppSubUrl}}/user/login">
+							<i class="fa-solid fa-right-to-bracket me-2"></i>Sign in
+						</a>
+						<a class="btn btn-outline-primary btn-lg" href="{{AppSubUrl}}/explore/repos">
+							<i class="fa-solid fa-compass me-2"></i>Explore projects
+						</a>
+						<a class="btn btn-link text-decoration-none" href="https://docs.gitea.com/" target="_blank">
+							<i class="fa-solid fa-book-open me-2"></i>Documentation
+						</a>
+					</div>
+				</div>
+				<div class="col-12 col-lg-5">
+					<div class="card home-stat-card">
+						<div class="card-body p-4">
+							<h2 class="h4 fw-semibold mb-4">Why teams choose {{AppName}}</h2>
+							<div class="d-flex align-items-start gap-3 mb-4">
+								<div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+								<div>
+									<h3 class="h6 fw-semibold mb-1">Own your infrastructure</h3>
+									<p class="text-muted mb-0">Keep code and CI/CD workflows on servers you control with battle-tested security defaults.</p>
+								</div>
+							</div>
+							<div class="d-flex align-items-start gap-3 mb-4">
+								<div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+								<div>
+									<h3 class="h6 fw-semibold mb-1">Lean and extensible</h3>
+									<p class="text-muted mb-0">Integrate with your favorite DevOps tools thanks to rich APIs, webhooks and actions.</p>
+								</div>
+							</div>
+							<div class="d-flex align-items-start gap-3">
+								<div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
+								<div>
+									<h3 class="h6 fw-semibold mb-1">Designed for collaboration</h3>
+									<p class="text-muted mb-0">Pull requests, reviews and issue tracking that teams love to use.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-5 bg-white">
+		<div class="container">
+			<div class="row g-4">
+				<div class="col-md-4">
+					<div class="feature-icon mb-3"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+					<h3 class="h5 fw-semibold mb-3">Ship faster</h3>
+					<p class="text-muted">Built-in CI runners and packages help your team move ideas to production faster with less friction.</p>
+				</div>
+				<div class="col-md-4">
+					<div class="feature-icon mb-3"><i class="fa-solid fa-lock"></i></div>
+					<h3 class="h5 fw-semibold mb-3">Stay secure</h3>
+					<p class="text-muted">Enforce branch protections, SSO, fine-grained permissions and audit logs to keep your codebase safe.</p>
+				</div>
+				<div class="col-md-4">
+					<div class="feature-icon mb-3"><i class="fa-solid fa-plug"></i></div>
+					<h3 class="h5 fw-semibold mb-3">Integrate everywhere</h3>
+					<p class="text-muted">Connect with runners, chatops and automation platforms using webhooks, OAuth and a RESTful API.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-5 bg-soft border-top border-bottom">
+		<div class="container">
+			<div class="row g-4 align-items-center">
+				<div class="col-lg-7">
+					<h2 class="section-title mb-3">Run {{AppName}} on your own infrastructure</h2>
+					<p class="text-muted mb-4">Deploy the lightweight binary, Docker container or package that suits your Alpine Linux environment. Take advantage of database support, storage adapters and built-in mirroring.</p>
+					<div class="d-flex flex-wrap gap-3">
+						<a class="btn btn-outline-primary" href="https://docs.gitea.com/installation/install-from-binary" target="_blank">
+							<i class="fa-solid fa-terminal me-2"></i>Install guide
+						</a>
+						<a class="btn btn-outline-secondary" href="https://docs.gitea.com/installation/install-with-docker" target="_blank">
+							<i class="fa-brands fa-docker me-2"></i>Docker setup
+						</a>
+						<a class="btn btn-outline-secondary" href="https://docs.gitea.com/administration/config-cheat-sheet" target="_blank">
+							<i class="fa-solid fa-gears me-2"></i>Config cheat sheet
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-5">
+					<div class="card border-0 home-stat-card">
+						<div class="card-body">
+							<h3 class="h5 fw-semibold mb-4">Launch checklist</h3>
+							<ul class="list-unstyled mb-0">
+								<li class="d-flex align-items-start mb-3">
+									<i class="fa-solid fa-circle-check text-success me-2 mt-1"></i>
+									<div>
+										<strong>Configure domains & SSL</strong>
+										<p class="text-muted mb-0 small">Secure your instance with reverse proxy headers and automatic HTTPS.</p>
+									</div>
+								</li>
+								<li class="d-flex align-items-start mb-3">
+									<i class="fa-solid fa-circle-check text-success me-2 mt-1"></i>
+									<div>
+										<strong>Connect CI runners</strong>
+										<p class="text-muted mb-0 small">Hook up runners for pipelines and deployments with ease.</p>
+									</div>
+								</li>
+								<li class="d-flex align-items-start">
+									<i class="fa-solid fa-circle-check text-success me-2 mt-1"></i>
+									<div>
+										<strong>Invite collaborators</strong>
+										<p class="text-muted mb-0 small">Sync teams, organizations and permissions to start shipping.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-5">
+		<div class="container">
+			<div class="home-footer-cta text-center text-lg-start">
+				<div class="row align-items-center g-4">
+					<div class="col-lg-8">
+						<h2 class="mb-3">Ready to host your next big idea?</h2>
+						<p class="mb-0">Sign in to your {{AppName}} instance or invite your team to collaborate securely with pull requests, packages and automation.</p>
+					</div>
+					<div class="col-lg-4 text-lg-end">
+						<a class="btn btn-light btn-lg text-primary" href="{{AppSubUrl}}/user/sign_up">
+							<i class="fa-solid fa-user-plus me-2"></i>{{ctx.Locale.Tr "sign_up"}}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{{end}}
+</div>
+{{template "base/footer" .}}
