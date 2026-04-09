@@ -6,6 +6,10 @@
 
 ![定制的 Gitea 主页登录页面的截图，展示了基于 Bootstrap 的英雄式布局、快捷操作以及页脚的优化效果2](asset/image2.png)
 
+![定制的 Gitea 主页登录页面的截图，展示了基于 Bootstrap 的英雄式布局、快捷操作以及页脚的优化效果3](asset/image3.png)
+
+![定制的 Gitea 主页登录页面的截图，展示了基于 Bootstrap 的英雄式布局、快捷操作以及页脚的优化效果4](asset/image4.png)
+
 ## 包含内容
 
 - `custom/templates/home.tmpl` – 用 Bootstrap 5 设计覆盖了默认的首页模板
