@@ -5,26 +5,26 @@
 		<div class="container">
 			<div class="row align-items-center g-4">
 				<div class="col-lg-8">
-					<span class="badge text-bg-primary text-uppercase mb-3">Welcome back</span>
-					<h1 class="display-5 fw-bold mb-3">Dashboard · {{.SignedUser.Name}}</h1>
-					<p class="lead mb-4">Quick links to jump straight into your day with {{AppName}}.</p>
+					<span class="badge text-bg-primary text-uppercase mb-3">欢迎回来</span>
+					<h1 class="display-5 fw-bold mb-3">控制面板 · {{.SignedUser.Name}}</h1>
+					<p class="lead mb-4">使用 {{AppName}} 快速开始您的工作。</p>
 					<div class="d-flex flex-wrap gap-3">
 						<a class="btn btn-primary btn-lg" href="{{AppSubUrl}}/repo/create">
-							<i class="fa-solid fa-circle-plus me-2"></i>Create repository
+							<i class="fa-solid fa-circle-plus me-2"></i>创建仓库
 						</a>
 						<a class="btn btn-outline-primary btn-lg" href="{{AppSubUrl}}/explore/repos">
-							<i class="fa-solid fa-compass me-2"></i>Explore projects
+							<i class="fa-solid fa-compass me-2"></i>探索项目
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="card shadow-sm border-0">
 						<div class="card-body">
-							<h2 class="h5 fw-semibold mb-4">Quick actions</h2>
+							<h2 class="h5 fw-semibold mb-4">快速操作</h2>
 							<ul class="list-group list-group-flush">
-								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/{{.SignedUser.Name}}"><i class="fa-solid fa-user me-2"></i>View profile</a></li>
-								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/{{.SignedUser.Name}}?tab=repositories"><i class="fa-solid fa-book me-2"></i>Manage repositories</a></li>
-								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/notifications"><i class="fa-solid fa-bell me-2"></i>Check notifications</a></li>
+								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/{{.SignedUser.Name}}"><i class="fa-solid fa-user me-2"></i>查看个人资料</a></li>
+								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/{{.SignedUser.Name}}?tab=repositories"><i class="fa-solid fa-book me-2"></i>管理仓库</a></li>
+								<li class="list-group-item px-0"><a class="link-primary text-decoration-none" href="{{AppSubUrl}}/notifications"><i class="fa-solid fa-bell me-2"></i>查看通知</a></li>
 							</ul>
 						</div>
 					</div>
@@ -38,27 +38,27 @@
 				<div class="col-md-4">
 					<div class="card home-stat-card h-100">
 						<div class="card-body">
-							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-timeline me-2 text-primary"></i>Stay updated</h3>
-							<p class="text-muted mb-3">Jump into your activity feed to review pull requests, issues and events.</p>
-							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/dashboard">Open dashboard</a>
+							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-timeline me-2 text-primary"></i>保持更新</h3>
+							<p class="text-muted mb-3">进入您的动态流，查看拉取请求、工单和事件。</p>
+							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/dashboard">打开控制面板</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card home-stat-card h-100">
 						<div class="card-body">
-							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-diagram-project me-2 text-primary"></i>Manage repositories</h3>
-							<p class="text-muted mb-3">Keep tabs on projects, branches and pull requests that matter most.</p>
-							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/{{.SignedUser.Name}}?tab=repositories">View repositories</a>
+							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-diagram-project me-2 text-primary"></i>管理仓库</h3>
+							<p class="text-muted mb-3">关注最重要的项目、分支和拉取请求。</p>
+							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/{{.SignedUser.Name}}?tab=repositories">查看仓库</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card home-stat-card h-100">
 						<div class="card-body">
-							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-gear me-2 text-primary"></i>Tune your settings</h3>
-							<p class="text-muted mb-3">Update SSH keys, notifications and integrations for your workflow.</p>
-							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/user/settings">Open settings</a>
+							<h3 class="h5 fw-semibold mb-3"><i class="fa-solid fa-gear me-2 text-primary"></i>调整设置</h3>
+							<p class="text-muted mb-3">为您的工作流程更新 SSH 密钥、通知和集成。</p>
+							<a class="btn btn-sm btn-outline-primary" href="{{AppSubUrl}}/user/settings">打开设置</a>
 						</div>
 					</div>
 				</div>
@@ -70,44 +70,44 @@
 		<div class="container py-5">
 			<div class="row align-items-center g-5">
 				<div class="col-12 col-lg-7">
-					<span class="badge text-bg-primary text-uppercase mb-3">Self-hosted Git · {{AppName}}</span>
-					<h1 class="mb-4">Build, collaborate and deliver with confidence.</h1>
-					<p class="lead mb-5">Lightweight, powerful and totally yours. {{AppName}} gives your team a beautiful code collaboration hub backed by open source freedom.</p>
+					<span class="badge text-bg-primary text-uppercase mb-3">自托管 Git · {{AppName}}</span>
+					<h1 class="mb-4">构建、协作并满怀信心地交付。</h1>
+					<p class="lead mb-5">轻量、强大且完全属于您。{{AppName}} 为您的团队提供了一个美丽的、基于开源自由的代码协作中心。</p>
 					<div class="d-flex flex-wrap gap-3">
 						<a class="btn btn-primary btn-lg" href="{{AppSubUrl}}/user/login">
-							<i class="fa-solid fa-right-to-bracket me-2"></i>Sign in
+							<i class="fa-solid fa-right-to-bracket me-2"></i>登录
 						</a>
 						<a class="btn btn-outline-primary btn-lg" href="{{AppSubUrl}}/explore/repos">
-							<i class="fa-solid fa-compass me-2"></i>Explore projects
+							<i class="fa-solid fa-compass me-2"></i>探索项目
 						</a>
-						<a class="btn btn-link text-decoration-none" href="https://docs.gitea.com/" target="_blank">
-							<i class="fa-solid fa-book-open me-2"></i>Documentation
+						<a class="btn btn-link text-decoration-none" href="https://docs.gitea.com/zh-cn/" target="_blank">
+							<i class="fa-solid fa-book-open me-2"></i>文档
 						</a>
 					</div>
 				</div>
 				<div class="col-12 col-lg-5">
 					<div class="card home-stat-card">
 						<div class="card-body p-4">
-							<h2 class="h4 fw-semibold mb-4">Why teams choose {{AppName}}</h2>
+							<h2 class="h4 fw-semibold mb-4">为什么团队选择 {{AppName}}</h2>
 							<div class="d-flex align-items-start gap-3 mb-4">
 								<div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
 								<div>
-									<h3 class="h6 fw-semibold mb-1">Own your infrastructure</h3>
-									<p class="text-muted mb-0">Keep code and CI/CD workflows on servers you control with battle-tested security defaults.</p>
+									<h3 class="h6 fw-semibold mb-1">掌控您的基础设施</h3>
+									<p class="text-muted mb-0">通过经过实战检验的安全默认设置，在您控制的服务器上保留代码和 CI/CD 工作流。</p>
 								</div>
 							</div>
 							<div class="d-flex align-items-start gap-3 mb-4">
 								<div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
 								<div>
-									<h3 class="h6 fw-semibold mb-1">Lean and extensible</h3>
-									<p class="text-muted mb-0">Integrate with your favorite DevOps tools thanks to rich APIs, webhooks and actions.</p>
+									<h3 class="h6 fw-semibold mb-1">精简且可扩展</h3>
+									<p class="text-muted mb-0">得益于丰富的 API、Webhooks 和 Actions，与您喜爱的 DevOps 工具集成。</p>
 								</div>
 							</div>
 							<div class="d-flex align-items-start gap-3">
 								<div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
 								<div>
-									<h3 class="h6 fw-semibold mb-1">Designed for collaboration</h3>
-									<p class="text-muted mb-0">Pull requests, reviews and issue tracking that teams love to use.</p>
+									<h3 class="h6 fw-semibold mb-1">专为协作而设计</h3>
+									<p class="text-muted mb-0">团队喜爱的拉取请求、代码审查和工单追踪。</p>
 								</div>
 							</div>
 						</div>
@@ -121,18 +121,18 @@
 			<div class="row g-4">
 				<div class="col-md-4">
 					<div class="feature-icon mb-3"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-					<h3 class="h5 fw-semibold mb-3">Ship faster</h3>
-					<p class="text-muted">Built-in CI runners and packages help your team move ideas to production faster with less friction.</p>
+					<h3 class="h5 fw-semibold mb-3">更快的交付</h3>
+					<p class="text-muted">内置的 CI 运行器和软件包可帮助您的团队更顺畅地将创意推向生产环境。</p>
 				</div>
 				<div class="col-md-4">
 					<div class="feature-icon mb-3"><i class="fa-solid fa-lock"></i></div>
-					<h3 class="h5 fw-semibold mb-3">Stay secure</h3>
-					<p class="text-muted">Enforce branch protections, SSO, fine-grained permissions and audit logs to keep your codebase safe.</p>
+					<h3 class="h5 fw-semibold mb-3">保持安全</h3>
+					<p class="text-muted">强制执行分支保护、SSO、精细的权限和审计日志，以确保您的代码库安全。</p>
 				</div>
 				<div class="col-md-4">
 					<div class="feature-icon mb-3"><i class="fa-solid fa-plug"></i></div>
-					<h3 class="h5 fw-semibold mb-3">Integrate everywhere</h3>
-					<p class="text-muted">Connect with runners, chatops and automation platforms using webhooks, OAuth and a RESTful API.</p>
+					<h3 class="h5 fw-semibold mb-3">全方位集成</h3>
+					<p class="text-muted">使用 Webhooks、OAuth 和 RESTful API 连接运行器、ChatOps 和自动化平台。</p>
 				</div>
 			</div>
 		</div>
@@ -141,44 +141,44 @@
 		<div class="container">
 			<div class="row g-4 align-items-center">
 				<div class="col-lg-7">
-					<h2 class="section-title mb-3">Run {{AppName}} on your own infrastructure</h2>
-					<p class="text-muted mb-4">Deploy the lightweight binary, Docker container or package that suits your Alpine Linux environment. Take advantage of database support, storage adapters and built-in mirroring.</p>
+					<h2 class="section-title mb-3">在您自己的基础设施上运行 {{AppName}}</h2>
+					<p class="text-muted mb-4">部署适合您环境的轻量级二进制文件、Docker 容器或软件包。充分利用数据库支持、存储适配器和内置镜像功能。</p>
 					<div class="d-flex flex-wrap gap-3">
-						<a class="btn btn-outline-primary" href="https://docs.gitea.com/installation/install-from-binary" target="_blank">
-							<i class="fa-solid fa-terminal me-2"></i>Install guide
+						<a class="btn btn-outline-primary" href="https://docs.gitea.com/zh-cn/installation/install-from-binary" target="_blank">
+							<i class="fa-solid fa-terminal me-2"></i>安装指南
 						</a>
-						<a class="btn btn-outline-secondary" href="https://docs.gitea.com/installation/install-with-docker" target="_blank">
-							<i class="fa-brands fa-docker me-2"></i>Docker setup
+						<a class="btn btn-outline-secondary" href="https://docs.gitea.com/zh-cn/installation/install-with-docker" target="_blank">
+							<i class="fa-brands fa-docker me-2"></i>Docker 设置
 						</a>
-						<a class="btn btn-outline-secondary" href="https://docs.gitea.com/administration/config-cheat-sheet" target="_blank">
-							<i class="fa-solid fa-gears me-2"></i>Config cheat sheet
+						<a class="btn btn-outline-secondary" href="https://docs.gitea.com/zh-cn/administration/config-cheat-sheet" target="_blank">
+							<i class="fa-solid fa-gears me-2"></i>配置速查表
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-5">
 					<div class="card border-0 home-stat-card">
 						<div class="card-body">
-							<h3 class="h5 fw-semibold mb-4">Launch checklist</h3>
+							<h3 class="h5 fw-semibold mb-4">启动清单</h3>
 							<ul class="list-unstyled mb-0">
 								<li class="d-flex align-items-start mb-3">
 									<i class="fa-solid fa-circle-check text-success me-2 mt-1"></i>
 									<div>
-										<strong>Configure domains & SSL</strong>
-										<p class="text-muted mb-0 small">Secure your instance with reverse proxy headers and automatic HTTPS.</p>
+										<strong>配置域名和 SSL</strong>
+										<p class="text-muted mb-0 small">通过反向代理标头和自动 HTTPS 保护您的实例。</p>
 									</div>
 								</li>
 								<li class="d-flex align-items-start mb-3">
 									<i class="fa-solid fa-circle-check text-success me-2 mt-1"></i>
 									<div>
-										<strong>Connect CI runners</strong>
-										<p class="text-muted mb-0 small">Hook up runners for pipelines and deployments with ease.</p>
+										<strong>连接 CI 运行器</strong>
+										<p class="text-muted mb-0 small">轻松连接用于流水线和部署的运行器。</p>
 									</div>
 								</li>
 								<li class="d-flex align-items-start">
 									<i class="fa-solid fa-circle-check text-success me-2 mt-1"></i>
 									<div>
-										<strong>Invite collaborators</strong>
-										<p class="text-muted mb-0 small">Sync teams, organizations and permissions to start shipping.</p>
+										<strong>邀请协作人员</strong>
+										<p class="text-muted mb-0 small">同步团队、组织和权限以开始协作。</p>
 									</div>
 								</li>
 							</ul>
@@ -193,8 +193,8 @@
 			<div class="home-footer-cta text-center text-lg-start">
 				<div class="row align-items-center g-4">
 					<div class="col-lg-8">
-						<h2 class="mb-3">Ready to host your next big idea?</h2>
-						<p class="mb-0">Sign in to your {{AppName}} instance or invite your team to collaborate securely with pull requests, packages and automation.</p>
+						<h2 class="mb-3">准备好托管您的下一个伟大的想法了吗？</h2>
+						<p class="mb-0">登录您的 {{AppName}} 实例或邀请您的团队通过拉取请求、软件包和自动化安全地协作。</p>
 					</div>
 					<div class="col-lg-4 text-lg-end">
 						<a class="btn btn-light btn-lg text-primary" href="{{AppSubUrl}}/user/sign_up">

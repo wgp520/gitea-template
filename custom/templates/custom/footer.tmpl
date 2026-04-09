@@ -1,29 +1,30 @@
+{{if .PageIsHome}}
 <div class="custom-footer">
 	<div class="footer-inner">
 		<div>
-			<h3><i class="fa-solid fa-code-branch me-2"></i>Build together</h3>
-			<p>Deliver faster with lightweight workflows, protected branches and integrated automation. {{AppName}} keeps your DevOps stack on hardware you trust.</p>
+			<h3><i class="fa-solid fa-code-branch me-2"></i>共同构建</h3>
+			<p>通过轻量级工作流、受保护的分支和集成自动化，更快地交付。{{AppName}} 将您的 DevOps 栈保留在您信任的硬件上。</p>
 		</div>
 		<div>
-			<h3>Resources</h3>
+			<h3>资源</h3>
 			<ul class="footer-links">
-				<li><a href="https://docs.gitea.com/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open me-2"></i>Product documentation</a></li>
-				<li><a href="https://blog.gitea.com/" target="_blank" rel="noopener"><i class="fa-solid fa-newspaper me-2"></i>Release notes</a></li>
-				<li><a href="https://github.com/go-gitea/gitea" target="_blank" rel="noopener"><i class="fa-brands fa-github me-2"></i>Source code</a></li>
+				<li><a href="https://docs.gitea.com/zh-cn/" target="_blank" rel="noopener"><i class="fa-solid fa-book-open me-2"></i>产品文档</a></li>
+				<li><a href="https://blog.gitea.com/" target="_blank" rel="noopener"><i class="fa-solid fa-newspaper me-2"></i>发布日志</a></li>
+				<li><a href="https://github.com/go-gitea/gitea" target="_blank" rel="noopener"><i class="fa-brands fa-github me-2"></i>源代码</a></li>
 			</ul>
 		</div>
 		<div>
-			<h3>Get help</h3>
+			<h3>获取帮助</h3>
 			<ul class="footer-links">
-				<li><a href="https://docs.gitea.com/installation" target="_blank" rel="noopener"><i class="fa-solid fa-server me-2"></i>Installation guide</a></li>
-				<li><a href="https://docs.gitea.com/administration" target="_blank" rel="noopener"><i class="fa-solid fa-shield-halved me-2"></i>Admin handbook</a></li>
-				<li><a href="https://docs.gitea.com/usage" target="_blank" rel="noopener"><i class="fa-solid fa-people-group me-2"></i>User onboarding</a></li>
+				<li><a href="https://docs.gitea.com/zh-cn/installation" target="_blank" rel="noopener"><i class="fa-solid fa-server me-2"></i>安装指南</a></li>
+				<li><a href="https://docs.gitea.com/zh-cn/administration" target="_blank" rel="noopener"><i class="fa-solid fa-shield-halved me-2"></i>管理员手册</a></li>
+				<li><a href="https://docs.gitea.com/zh-cn/usage" target="_blank" rel="noopener"><i class="fa-solid fa-people-group me-2"></i>用户入门</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="footer-divider"></div>
 	<div class="footer-bottom">
-		<span>© {{AppName}} – self-hosted Git, streamlined.</span>
+		<span>© {{AppName}} – 自托管 Git，化繁为简。</span>
 		<div class="social-links">
 			<a href="https://github.com/go-gitea" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
 			<a href="https://twitter.com/giteaio" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -31,3 +32,4 @@
 		</div>
 	</div>
 </div>
+{{end}}
