@@ -1,7 +1,10 @@
 # Gitea Bootstrap 5 登陆页面主题
 
 一种全新的主题设计，可将 Gitea 服务器实例的公共首页替换为基于现代 Bootstrap 5 和 Font Awesome 的界面体验。已登录用户会看到更新后的快速操作仪表板行，而访客则会看到具有显著行动号召的营销风格的英雄布局。
-!（定制的 Gitea 主页登录页面的截图，展示了基于 Bootstrap 的英雄式布局、快捷操作以及页脚的优化效果）（图片名称：asset/snap1.png）
+
+![定制的 Gitea 主页登录页面的截图，展示了基于 Bootstrap 的英雄式布局、快捷操作以及页脚的优化效果1](asset/image1.png)
+
+![定制的 Gitea 主页登录页面的截图，展示了基于 Bootstrap 的英雄式布局、快捷操作以及页脚的优化效果2](asset/image2.png)
 
 ## 包含内容
 
