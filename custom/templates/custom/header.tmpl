@@ -1,4 +1,4 @@
-{{if .PageIsHome}}
+{{if or .PageIsHome .PageIsSignIn .PageIsSignUp .PageIsForgotPassword .PageIsLogin}}
 	<!-- Custom header assets injected via custom/templates/custom/header.tmpl -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,225 @@
 		body {
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 			background-color: #f8fafc;
+		}
+
+		/* 登录/注册/找回密码页面通用样式 */
+		.user.signin, .user.signup, .user.forgot-password, .user.login {
+			min-height: calc(100vh - 8rem);
+			display: flex !important;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background: radial-gradient(circle at top left, rgba(58, 123, 213, 0.08), transparent),
+				radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.08), transparent) !important;
+		}
+
+		#oauth2-login-navigator-inner {
+			
+		}
+
+		.user.signin .ui.container, .user.signup .ui.container, .user.forgot-password .ui.container, .user.login .ui.container {
+			max-width: 480px !important;
+			width: 480px !important;
+			padding: 1.5rem !important;
+		}
+
+		/* 调整 Fomantic UI 默认卡片样式为现代 Bootstrap 5 风格 */
+		.user.signin .ui.header, .user.signup .ui.header, .user.forgot-password .ui.header, .user.login .ui.header {
+			background: linear-gradient(135deg, #2563eb, #14b8a6) !important;
+			color: #ffffff !important;
+			border: none !important;
+			border-radius: 1.25rem 1.25rem 0 0 !important;
+			padding: 2rem !important;
+			text-align: center !important;
+			font-weight: 700 !important;
+			font-size: 1.5rem !important;
+			box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1) !important;
+			margin-bottom: 0 !important;
+		}
+
+		.user.signin .ui.segment, .user.signup .ui.segment, .user.forgot-password .ui.segment, .user.login .ui.segment {
+			border-radius: 0 0 1.25rem 1.25rem !important;
+			border: none !important;
+			box-shadow: 0 14px 45px rgba(15, 23, 42, 0.1) !important;
+			padding: 2.5rem !important;
+			background: #ffffff !important;
+		}
+
+		/* 表单输入框美化 */
+		.ui.form .field input:not([type="checkbox"]):not([type="radio"]) {
+			border-radius: 0.75rem !important;
+			border: 1.5px solid #e2e8f0 !important;
+			padding: 0.85rem 1.15rem !important;
+			transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+			font-family: 'Inter', sans-serif !important;
+			color: #000000 !important; /* 修改输入文字颜色为纯黑色 */
+			background-color: #ffffff !important; /* 强制背景为白色 */
+		}
+
+		.ui.form .field input:focus, 
+		.ui.form .field input:active,
+		.ui.form .field input:-webkit-autofill,
+		.ui.form .field input:-webkit-autofill:hover, 
+		.ui.form .field input:-webkit-autofill:focus {
+			border-color: #2563eb !important;
+			box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1) !important;
+			color: #000000 !important;
+			-webkit-text-fill-color: #000000 !important;
+			background-color: #ffffff !important;
+			-webkit-box-shadow: 0 0 0px 1000px white inset !important; /* 解决浏览器自动填充背景色问题 */
+		}
+
+		/* 按钮美化 */
+		.ui.primary.button, .ui.positive.button, .openid.ui.button {
+			background: linear-gradient(135deg, #2563eb, #14b8a6) !important;
+			border-radius: 0.75rem !important;
+			padding: 0.9rem 2rem !important;
+			font-weight: 600 !important;
+			transition: all 0.3s ease !important;
+			text-transform: none !important;
+			box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+			color: #ffffff !important;
+			border: none !important;
+		}
+
+		.ui.primary.button:hover, .ui.positive.button:hover, .openid.ui.button:hover {
+			transform: translateY(-2px) !important;
+			box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3) !important;
+			filter: brightness(1.05) !important;
+			color: #ffffff !important;
+		}
+
+		/* 复选框美化 - 解决点击无反应和样式不生效问题 */
+		.ui.checkbox {
+			position: relative !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			min-height: 1.25rem !important;
+			cursor: pointer !important;
+		}
+
+		/* 强制让隐藏的 input 覆盖整个区域以接收点击 */
+		.ui.checkbox input {
+			position: absolute !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			opacity: 0 !important;
+			z-index: 5 !important;
+			margin: 0 !important;
+			cursor: pointer !important;
+		}
+
+		.ui.checkbox label {
+			cursor: pointer !important;
+			padding-left: 1.75rem !important;
+			color: #475569 !important;
+			position: relative !important;
+			z-index: 1 !important;
+			user-select: none !important;
+		}
+
+		/* 模拟复选框的外框 */
+		.ui.checkbox label::before {
+			content: "" !important;
+			position: absolute !important;
+			left: 0 !important;
+			top: 50% !important;
+			transform: translateY(-50%) !important;
+			width: 1.2rem !important;
+			height: 1.2rem !important;
+			background: #ffffff !important;
+			border: 1.5px solid #cbd5e1 !important;
+			border-radius: 0.35rem !important;
+			transition: all 0.2s ease !important;
+			display: block !important;
+		}
+
+		/* 选中状态：支持 Fomantic UI 的 .checked 类或原生 :checked 状态 */
+		.ui.checkbox.checked label::before,
+		.ui.checkbox input:checked ~ label::before,
+		.ui.checkbox:has(input:checked) label::before {
+			background: #2563eb !important;
+			border-color: #2563eb !important;
+		}
+
+		/* 对勾图标 */
+		.ui.checkbox label::after {
+			content: "\f00c" !important;
+			font-family: "Font Awesome 6 Free" !important;
+			font-weight: 900 !important;
+			font-size: 0.75rem !important;
+			color: #ffffff !important;
+			position: absolute !important;
+			left: 0 !important;
+			top: 50% !important;
+			transform: translateY(-50%) scale(0.5) !important;
+			width: 1.2rem !important;
+			height: 1.2rem !important;
+			line-height: 1.2rem !important;
+			text-align: center !important;
+			opacity: 0 !important;
+			transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) !important;
+			display: block !important;
+		}
+
+		/* 选中时显示对勾 */
+		.ui.checkbox.checked label::after,
+		.ui.checkbox input:checked ~ label::after,
+		.ui.checkbox:has(input:checked) label::after {
+			opacity: 1 !important;
+			transform: translateY(-50%) scale(1) !important;
+		}
+
+		/* 鼠标悬停效果 */
+		.ui.checkbox:hover label::before {
+			border-color: #2563eb !important;
+		}
+
+		/* 标签美化 */
+		.ui.form .field > label {
+			font-weight: 600 !important;
+			color: #475569 !important;
+			margin-bottom: 0.65rem !important;
+		}
+
+		/* 底部链接和通行密钥部分美化 */
+		.user.signin .ui.message, .user.signup .ui.message,
+		.user.signin .ui.attached.segment.header.top,
+		.user.login .ui.attached.segment.header.top {
+			background: #ffffff !important;
+			border: 1px solid #f1f5f9 !important;
+			border-radius: 1rem !important;
+			box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05) !important;
+			text-align: center !important;
+			color: #64748b !important;
+			margin-top: -0.5rem !important; /* 负边距让其与上方卡片视觉上更接近 */
+			padding: 1rem !important;
+			font-size: 0.85rem !important; /* 进一步缩小字体 */
+			z-index: 1;
+			position: relative;
+			width: 100% !important;
+			max-width: 480px !important;
+		}
+
+		/* 针对通行密钥登录链接的单独处理 */
+		.signin-passkey {
+			color: #2563eb !important;
+			font-weight: 600 !important;
+			text-decoration: none !important;
+			font-size: 0.85rem !important;
+		}
+
+		.user.signin .ui.message a, .user.signup .ui.message a {
+			color: #2563eb !important;
+			font-weight: 600 !important;
+			text-decoration: none !important;
+		}
+
+		.user.signin .ui.message a:hover, .user.signup .ui.message a:hover {
+			text-decoration: underline !important;
 		}
 
 		.custom-top-banner {
